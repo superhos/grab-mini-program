@@ -1,0 +1,34 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+      <text class="userinfo-nickname">亲爱的 {{userInfo.nickName}}，我知道你现在很孤独无助，来抓阄吧！没有问题是抓阄解决不了的!</text>
+    </block>
+  </view>
+  <view class="content">
+    <view wx:key="index" class="item {{item.isSelect?'selected':''}}" wx:for="{{jius}}">
+      <view class="item-detail" bindtap="showDialog" data-content="{{item}}" >
+        <text wx:if="{{editMode}}">{{index+1}}</text>
+        <text wx:else>?</text>
+      </view>
+     <button wx:if="{{editMode}}" bindtap="delete" data-index="{{index}}" class="delete">×</button>
+    </view>
+      <navigator class="add" wx:if="{{editMode}}" url='../add/add'>
+        <view>
+          <view class="icon-add-50">
+          </view>
+        </view>
+      </navigator>
+  </view>
+  <view class="control">
+    <button wx:if="{{editMode}}" bindtap='startCatch'>开 始抓 阄</button>
+    <button wx:else bindtap='endCatch'>结 束抓 阄</button>
+  </view>
+</view>
+<view wx:if="{{dialogShow}}" class="mask"></view>
+<view wx:if="{{dialogShow}}" class="dialog">
+<text>{{dialogText}}</text>
+<button bindtap='closeDialog'>哦</button>
+</view>

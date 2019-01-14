@@ -1,0 +1,29 @@
+.title{
+  width:100%;
+  text-align: center;
+}
+
+.title text{
+  padding:13rpx 15rpx;
+  background: #FFF;
+  border: 2px solid #393112;
+  border-radius: 5px;
+  font-size:28rpx;
+}
+
+textarea{
+  background: #FFF;
+  border: 2px solid #393112;
+  border-radius: 30px;
+  font-size:28srpx;
+  padding:30rpx;
+  margin:50rpx;
+  margin-left:35rpx;
+  width:600rpx;
+}
+
+button{
+  background: #FFF;
+  border:2px solid #393112;
+  margin:0 5%;
+}

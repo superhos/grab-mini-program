@@ -1,0 +1,7 @@
+<view class="container">
+    <view class="title">
+      <text>增加阄阄</text>
+    </view>
+    <textarea bindinput='changeText' placeholder="输入要抓阄的内容"  />
+    <button bindtap='add'>确定</button>
+</view>
